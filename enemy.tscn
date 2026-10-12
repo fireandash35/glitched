@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://co0fgs7vdssfo"]
+
+[ext_resource type="Script" uid="uid://b0tiyemaeidla" path="res://enemy.gd" id="1_7k104"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3ejc"]
+size = Vector2(41, 43)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y3ejc"]
+radius = 30.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1173764174]
+script = ExtResource("1_7k104")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1316780660]
+shape = SubResource("RectangleShape2D_y3ejc")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=429393372]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(1, 0, 0, 1)
+
+[node name="Timer" type="Timer" parent="." unique_id=444186486]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=223416297]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1808334866]
+shape = SubResource("CircleShape2D_y3ejc")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

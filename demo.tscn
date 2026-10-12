@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://ce231kymwcg1b"]
+
+[ext_resource type="Script" uid="uid://cqiay1gqkeenv" path="res://demo.gd" id="1_0bhed"]
+[ext_resource type="PackedScene" uid="uid://cxii260icfgek" path="res://PLAYER.tscn" id="2_m0rpm"]
+
+[node name="Node2D" type="Node2D" unique_id=513658572]
+script = ExtResource("1_0bhed")
+
+[node name="CharacterBody2D2" parent="." unique_id=1320679256 groups=["player"] instance=ExtResource("2_m0rpm")]
+position = Vector2(101, 3)
+
+[node name="Timer" type="Timer" parent="." unique_id=1093787452]
+wait_time = 3.0
+autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1934387768]
+offset_right = 21.0
+offset_bottom = 421.0
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=637528558]
+offset_left = 328.0
+offset_top = 395.0
+offset_right = 420.0
+offset_bottom = 466.0
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=313020991]
+offset_left = 408.0
+offset_top = 185.0
+offset_right = 428.0
+offset_bottom = 372.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
